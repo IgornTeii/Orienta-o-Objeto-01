@@ -1,23 +1,27 @@
+import java.util.Scanner;
 public class alunoTeste {
     public static void main(String[] args) {
-        Aluno igor = new Aluno();
 
-        igor.nome = "Igor";
-        igor.idade = 19;
-        igor.sexo = 'M';
-        igor.altura = 1.81f;
+        Scanner read = new Scanner(System.in);
 
-        igor.estudar();
+        System.out.println("Qual seu nome ?");
+        String nome = read.nextLine();
+        System.out.println("Quantos anos você tem ?");
+        short idade = read.nextShort();
+        System.out.println("Qual o seu sexo ?");
+        char sexo = read.next().charAt(0);
+        System.out.println("Qual sua altura ?");
+        float altura = read.nextFloat();
 
-        Aluno professor = new Aluno();
+        Aluno aluno = new Aluno();
 
-        professor.nome = "Evandro";
-        professor.idade = 38;
-        professor.sexo = 'M';
-        professor.altura = 1.78f;
+        aluno.nome = nome;
+        aluno.idade = idade;
+        aluno.sexo = sexo;
+        aluno.altura = altura;
 
-        professor.estudar();
-
+        read.close();
+        aluno.estudar();
 
     }
 }
